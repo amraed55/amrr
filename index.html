@@ -140,15 +140,14 @@
       .search-toolbar { flex: 1 1 100%; }
       .settings-container { width: 100%; }
       .main-btn { width: 100%; justify-content: center; }
-      .dropdown-panel { top: max(env(safe-area-inset-top, 0px) + 8px, 8px); left: auto; right: 10px; width: min(236px, calc(100vw - 20px)); max-width: min(236px, calc(100vw - 20px)); max-height: calc(100vh - 16px); margin: 0; }
+      .dropdown-panel { width: 100%; max-width: 100%; }
     }
     @media (max-width: 520px) {
       .search-toolbar { gap: 8px; }
       .search-box-compact input { height: 38px; font-size: 12px; padding-inline: 12px 34px; }
-      .tab-btn { min-width: max-content; max-width: none; min-height: 54px; padding: 9px 36px; border-radius: 15px; }
-      .tab-icon { width: 24px; height: 24px; font-size: 13px; border-radius: 9px; inset-inline-start: 8px; }
-      .tab-count-badge { min-width: 22px; height: 20px; padding: 0 6px; font-size: 10px; inset-inline-end: 8px; }
-      .tab-label-text { font-size: 11px; line-height: 1.3; white-space: nowrap; }
+      .tab-btn { min-width: 112px; min-height: 62px; padding: 10px 10px; }
+      .tab-icon { width: 30px; height: 30px; font-size: 16px; border-radius: 11px; }
+      .tab-count-badge { min-width: 26px; height: 22px; padding: 0 7px; font-size: 11px; }
     }
     html.dark-mode {
       --bg:            #0F172A;
@@ -173,7 +172,7 @@
     .tabs-nav { -webkit-overflow-scrolling: touch; touch-action: pan-x; }
     .main-content { flex: 1 1 auto; min-height: 0; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; }
     .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; padding: 12px 20px 10px; box-shadow: var(--shadow); flex-shrink: 0; position: relative; }
-    .header-content { max-width: 1560px; margin: 0 auto; }
+    .header-content { max-width: 1200px; margin: 0 auto; }
     .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; gap: 12px; }
     .header-logo { display: flex; align-items: center; gap: 12px; }
     .logo-icon { width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; backdrop-filter: blur(10px); }
@@ -203,22 +202,17 @@
     .settings-container { position: relative; flex: 0 0 auto; z-index: 1000; }
     .main-btn { background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); color: white; border: none; padding: 10px 18px; border-radius: 14px; font-size: 14px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 25px rgba(58, 123, 213, 0.28); transition: 0.3s ease; font-family: var(--font); }
     .main-btn:active { transform: scale(0.96); }
-    .dropdown-panel { visibility: hidden; opacity: 0; position: fixed; top: max(env(safe-area-inset-top, 0px) + 8px, 8px); inset-inline-end: 10px; width: min(248px, calc(100vw - 20px)); min-width: 0; max-width: min(248px, calc(100vw - 20px)); max-height: calc(100vh - max(env(safe-area-inset-top, 0px) + 16px, 16px)); overflow-y: auto; background: linear-gradient(160deg, #1e3c72 0%, #1a2a6c 100%); backdrop-filter: blur(20px); border-radius: 16px; padding: 10px; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.36); border: 1px solid rgba(255,255,255,0.15); transform: translateY(-10px); transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
+    .dropdown-panel { visibility: hidden; opacity: 0; position: absolute; top: 54px; inset-inline-end: 0; width: max-content; min-width: 220px; max-width: min(92vw, 320px); background: linear-gradient(160deg, #1e3c72 0%, #1a2a6c 100%); backdrop-filter: blur(20px); border-radius: 20px; padding: 12px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.15); transform: translateY(15px); transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
     .dropdown-panel.active { visibility: visible; opacity: 1; transform: translateY(0); }
-    .menu-clock { text-align: center; font-size: 11px; color: #00d2ff; margin-bottom: 7px; font-weight: 900; opacity: 0.95; }
-    .menu-header { font-size: 9px; color: rgba(255, 255, 255, 0.42); padding: 4px 8px; text-transform: uppercase; border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 6px; white-space: nowrap; }
-    .menu-item { display: flex; align-items: center; padding: 8px 10px; color: #f5f6fa; text-decoration: none; border-radius: 10px; margin-bottom: 3px; transition: 0.3s; white-space: normal; font-size: 12px; font-weight: 800; line-height: 1.45; }
+    .menu-clock { text-align: center; font-size: 12px; color: #00d2ff; margin-bottom: 8px; font-weight: 900; opacity: 0.95; }
+    .menu-header { font-size: 10px; color: rgba(255, 255, 255, 0.42); padding: 5px 10px; text-transform: uppercase; border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 8px; white-space: nowrap; }
+    .menu-item { display: flex; align-items: center; padding: 10px 15px; color: #f5f6fa; text-decoration: none; border-radius: 12px; margin-bottom: 3px; transition: 0.3s; white-space: nowrap; font-size: 13px; font-weight: 800; }
     .menu-item:hover { background: rgba(255, 255, 255, 0.1); padding-inline-start: 20px; }
     .menu-item[hidden] { display: none !important; }
     .icon-dot { width: 7px; height: 7px; border-radius: 50%; background: #00d2ff; margin-inline-start: 12px; box-shadow: 0 0 8px #00d2ff; flex-shrink: 0; }
     .divider { height: 1px; background: rgba(255, 255, 255, 0.1); margin: 8px 5px; }
     .logout-item { color: #ff4b2b; font-weight: 900; }
     .logout-item:hover { background: rgba(255, 75, 43, 0.12) !important; }
-    .title-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .current-year-badge { display: inline-flex; align-items: center; justify-content: center; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,0.18); color: #fff; font-size: 12px; font-weight: 900; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16); backdrop-filter: blur(10px); }
-    .year-menu-item.active { background: rgba(255,255,255,0.18); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); }
-    .year-menu-item.active .icon-dot { background: #22c55e; box-shadow: 0 0 10px #22c55e; }
-    .year-status-note { padding: 8px 12px 4px; color: rgba(255,255,255,0.82); font-size: 12px; font-weight: 800; line-height: 1.6; }
 
     /* Login Screen Styles */
     #loginScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #2563eb, #1e40af); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
@@ -255,24 +249,23 @@
     .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; }
 
     /* Tabs */
-    .tabs-nav { display: flex; gap: 6px; background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(241,245,249,0.96) 100%); border-bottom: 1px solid var(--border); flex-shrink: 0; overflow-x: auto; padding: 8px 10px 10px; scrollbar-width: thin; scrollbar-color: var(--primary-light) transparent; scroll-behavior: smooth; box-shadow: inset 0 -1px 0 rgba(148,163,184,0.18); }
+    .tabs-nav { display: flex; gap: 10px; background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(241,245,249,0.96) 100%); border-bottom: 1px solid var(--border); flex-shrink: 0; overflow-x: auto; padding: 10px 12px 12px; scrollbar-width: thin; scrollbar-color: var(--primary-light) transparent; scroll-behavior: smooth; box-shadow: inset 0 -1px 0 rgba(148,163,184,0.18); }
     .tabs-nav::-webkit-scrollbar { height: 8px; }
     .tabs-nav::-webkit-scrollbar-thumb { background: linear-gradient(135deg, var(--primary-light), var(--primary)); border-radius: 999px; }
     .tabs-nav::-webkit-scrollbar-track { background: transparent; }
-    .tab-btn { flex: 0 0 auto; width: max-content; min-width: max-content; max-width: none; min-height: 58px; padding: 10px 44px; border: 1px solid rgba(99,102,241,0.14); border-radius: 17px; background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(241,245,249,0.92)); font-family: var(--font); font-weight: 900; font-size: 11px; color: var(--text); cursor: pointer; transition: all 0.3s ease; position: relative; display: inline-flex; align-items: center; justify-content: center; text-align: center; box-shadow: 0 8px 22px rgba(99,102,241,0.08), inset 0 1px 0 rgba(255,255,255,0.85); overflow: hidden; }
+    .tab-btn { flex: 0 0 auto; min-width: 124px; min-height: 68px; padding: 10px 12px; border: 1px solid rgba(99,102,241,0.14); border-radius: 18px; background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(241,245,249,0.92)); font-family: var(--font); font-weight: 900; font-size: 12px; color: var(--text); cursor: pointer; transition: all 0.3s ease; position: relative; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; white-space: normal; text-align: center; box-shadow: 0 8px 22px rgba(99,102,241,0.08), inset 0 1px 0 rgba(255,255,255,0.85); }
     .tab-btn:hover { color: var(--primary-dark); border-color: rgba(99,102,241,0.28); background: linear-gradient(145deg, rgba(255,255,255,1), rgba(224,231,255,0.95)); transform: translateY(-3px) scale(1.01); box-shadow: 0 16px 28px rgba(99,102,241,0.16); }
     .tab-btn.active { color: #fff; background: linear-gradient(135deg, #4F46E5 0%, #6366F1 52%, #60A5FA 100%); border-color: rgba(79,70,229,0.36); box-shadow: 0 18px 32px rgba(79,70,229,0.28); }
     .tab-btn.active::after { content: ''; position: absolute; inset-inline: 20px; bottom: 8px; height: 3px; background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,255,255,0.65)); border-radius: 999px; }
-    .tab-admin-cluster { display: flex; gap: 4px; align-items: stretch; flex: 0 0 auto; }
-    .tab-label-text { display: block; overflow: visible; text-overflow: clip; line-height: 1.35; max-width: 100%; min-width: 0; white-space: nowrap; word-break: normal; font-family: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, Arial, sans-serif; font-size: clamp(11px, 0.98vw, 14px); letter-spacing: -0.15px; text-align: center; }
-    .tab-btn.active .tab-label-text { text-shadow: 0 2px 12px rgba(255,255,255,0.18); }
-    .tab-icon { position: absolute; inset-inline-start: 10px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; background: rgba(99,102,241,0.08); color: var(--primary-dark); box-shadow: inset 0 0 0 1px rgba(99,102,241,0.10); }
+    .tab-admin-cluster { display: flex; gap: 8px; align-items: stretch; flex: 0 0 auto; }
+    .tab-label-text { display: inline-flex; align-items: center; justify-content: center; gap: 4px; line-height: 1.35; max-width: 100%; word-break: break-word; }
+    .tab-icon { width: 34px; height: 34px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; background: rgba(99,102,241,0.08); color: var(--primary-dark); box-shadow: inset 0 0 0 1px rgba(99,102,241,0.10); }
     .tab-btn.active .tab-icon { background: rgba(255,255,255,0.18); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16); }
-    .tab-count-badge { position: absolute; inset-inline-end: 10px; top: 50%; transform: translateY(-50%); min-width: 24px; height: 20px; padding: 0 6px; border-radius: 999px; background: rgba(99,102,241,0.10); color: var(--primary-dark); font-size: 10px; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; box-shadow: inset 0 0 0 1px rgba(99,102,241,0.10); }
+    .tab-count-badge { min-width: 28px; height: 22px; padding: 0 8px; border-radius: 999px; background: rgba(99,102,241,0.10); color: var(--primary-dark); font-size: 11px; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; box-shadow: inset 0 0 0 1px rgba(99,102,241,0.10); }
     .tab-btn.active .tab-count-badge { background: rgba(255,255,255,0.20); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16); }
     .search-screen { display: none; flex: 1 1 auto; min-height: 0; background: linear-gradient(180deg, rgba(248,250,252,0.98) 0%, rgba(241,245,249,0.98) 100%); padding: 16px; overflow-y: auto; }
     .search-screen.active { display: block; }
-    .search-screen-card { max-width: 1560px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); padding: 20px; }
+    .search-screen-card { max-width: 1200px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); padding: 20px; }
     .search-screen-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
     .search-screen-title { font-size: 22px; font-weight: 900; color: var(--text); margin-bottom: 6px; }
     .search-screen-subtitle { color: var(--text-muted); font-size: 13px; line-height: 1.7; }
@@ -302,8 +295,8 @@
     @keyframes searchFocusPulse { 0% { transform: scale(1); } 35% { transform: scale(1.015); } 100% { transform: scale(1); } }
     .tab-settings-trigger { flex: 0 0 auto; min-width: 52px; width: 52px; border: 1px dashed rgba(99,102,241,0.35); border-radius: 18px; background: rgba(99,102,241,0.06); color: var(--primary); font-family: var(--font); font-size: 17px; font-weight: 900; cursor: pointer; transition: all 0.2s ease; align-items: center; justify-content: center; box-shadow: 0 8px 18px rgba(99,102,241,0.08); }
     .tab-settings-trigger:hover { background: rgba(99,102,241,0.12); transform: translateY(-1px); }
-    .tab-upload-cluster { display: flex; gap: 4px; align-items: stretch; flex: 0 0 auto; }
-    .tab-upload-trigger { flex: 0 0 auto; padding: 0 12px; min-width: 108px; border: 1px dashed rgba(16,185,129,0.36); border-radius: 18px; background: linear-gradient(135deg, rgba(236,253,245,0.96), rgba(219,234,254,0.94)); color: #047857; font-family: var(--font); font-size: 13px; font-weight: 900; cursor: pointer; transition: all 0.2s ease; display: none; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 10px 20px rgba(16,185,129,0.08), inset 0 0 0 1px rgba(16,185,129,0.05); white-space: nowrap; }
+    .tab-upload-cluster { display: flex; gap: 10px; align-items: stretch; flex: 0 0 auto; }
+    .tab-upload-trigger { flex: 0 0 auto; padding: 0 16px; min-width: 124px; border: 1px dashed rgba(16,185,129,0.36); border-radius: 18px; background: linear-gradient(135deg, rgba(236,253,245,0.96), rgba(219,234,254,0.94)); color: #047857; font-family: var(--font); font-size: 13px; font-weight: 900; cursor: pointer; transition: all 0.2s ease; display: none; align-items: center; justify-content: center; gap: 7px; box-shadow: 0 10px 20px rgba(16,185,129,0.08), inset 0 0 0 1px rgba(16,185,129,0.05); }
     .tab-upload-trigger:hover { background: linear-gradient(135deg, rgba(16,185,129,0.18), rgba(14,165,233,0.16)); transform: translateY(-2px); box-shadow: 0 18px 28px rgba(16,185,129,0.14); }
     .tab-upload-trigger:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
     #tabSettingsPanel { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 3100; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
@@ -319,17 +312,8 @@
     .tab-settings-badge { width: 52px; min-height: 52px; border-radius: 14px; background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(14,165,233,0.12)); display: flex; align-items: center; justify-content: center; font-size: 24px; }
     .tab-settings-fields { display: grid; gap: 8px; }
     .tab-settings-fields label { font-size: 13px; font-weight: 800; color: var(--text-muted); }
-    .tab-settings-fields input, .tab-settings-fields textarea { width: 100%; padding: 12px 14px; border: 2px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); font-family: var(--font); font-size: 14px; box-sizing: border-box; outline: none; }
-    .tab-settings-fields textarea { min-height: 104px; resize: vertical; line-height: 1.8; }
-    .tab-settings-fields input:focus, .tab-settings-fields textarea:focus { border-color: var(--primary); }
-    .tab-settings-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; margin-top: 22px; }
-    .link-settings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 16px; }
-    .link-settings-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 16px; padding: 14px; box-shadow: var(--shadow-card); }
-    .link-settings-title { font-size: 15px; font-weight: 900; color: var(--text); margin-bottom: 8px; }
-    .link-settings-subtitle { font-size: 12px; color: var(--text-muted); line-height: 1.8; margin-bottom: 10px; }
-    .link-settings-textarea { width: 100%; min-height: 164px; border: 2px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); font-family: var(--font); font-size: 13px; box-sizing: border-box; outline: none; resize: vertical; padding: 12px 14px; line-height: 1.8; direction: ltr; text-align: left; }
-    .link-settings-textarea:focus { border-color: var(--primary); }
-    .link-settings-help { margin-top: 8px; font-size: 12px; color: var(--text-muted); line-height: 1.8; white-space: pre-line; }
+    .tab-settings-fields input { width: 100%; padding: 12px 14px; border: 2px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); font-family: var(--font); font-size: 14px; box-sizing: border-box; outline: none; }
+    .tab-settings-fields input:focus { border-color: var(--primary); }
     body.restricted-user-mode #tabSettingsBtn,
     body.restricted-user-mode #tabSettingsPanel,
     body.restricted-user-mode #permissionSyncBtn,
@@ -343,7 +327,7 @@
     /* Main Content */
     .main-content { flex: 1; overflow-y: auto; padding: 24px 20px; background: var(--bg); display: none; }
     .main-content.active { display: block; }
-    .content-wrapper { max-width: 1560px; margin: 0 auto; }
+    .content-wrapper { max-width: 1200px; margin: 0 auto; }
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
     .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-card); transition: all var(--transition); }
     .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--primary); }
@@ -364,16 +348,9 @@
     .filter-btn { background: var(--surface2); border: 2px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; cursor: pointer; font-family: var(--font); font-size: 13px; font-weight: 600; color: var(--text-muted); transition: all var(--transition); text-align: center; }
     .filter-btn:hover { border-color: var(--primary); color: var(--primary); background: var(--surface); }
     .filter-btn.active { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; border-color: var(--primary); box-shadow: 0 4px 12px rgba(99,102,241,0.3); }
-    .sort-toolbar { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px 14px; border-radius: 14px; background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(14,165,233,0.08)); border: 1px solid rgba(99,102,241,0.14); }
-    .sort-toolbar-label { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; color: var(--text); }
-    .sort-select { min-width: 190px; height: 42px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-family: var(--font); font-size: 13px; font-weight: 700; padding: 0 14px; outline: none; transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition); }
-    .sort-select:hover, .sort-select:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(99,102,241,0.12); transform: translateY(-1px); }
-    html.dark-mode .sort-toolbar { background: linear-gradient(135deg, rgba(51,65,85,0.55), rgba(30,41,59,0.72)); border-color: rgba(148,163,184,0.2); }
-    html.dark-mode .sort-select { background: #0f172a; border-color: #334155; color: #e2e8f0; }
-    @media (max-width: 768px) { .sort-toolbar { align-items: stretch; } .sort-select { width: 100%; min-width: 0; } }
     .judgments-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-    .judgments-grid { margin-bottom: 18px; }
-    .file-list-card { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto; overflow-y: hidden; border: 1px solid #edf2f7; }
+    .judgments-grid { margin-bottom: 32px; }
+    .file-list-card { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #edf2f7; }
     html.dark-mode .file-list-card { background: #0F172A; border-color: #334155; box-shadow: none; }
     .file-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
     .file-table thead { background: #f8fafc; }
@@ -396,19 +373,18 @@
     html.dark-mode .main-name { color: #E5E7EB; }
     .size-info { font-size: 0.68rem; color: #a0aec0; font-weight: 400; line-height: 1.5; }
     html.dark-mode .size-info { color: #94A3B8; }
-    .row-desc { display: none !important; }
+    .row-desc { font-size: 0.68rem; color: #718096; line-height: 1.6; }
     html.dark-mode .row-desc { color: #CBD5E1; }
-    .row-extra { display: flex; align-items: center; gap: 5px; flex-wrap: nowrap; margin-top: 2px; }
-    .row-extra-inline { justify-content: flex-end; margin-top: 0; flex-wrap: nowrap; }
-    .list-favorite-btn { border: none; background: #fff5f5; color: #E11D48; min-width: 32px; height: 32px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; padding: 0 8px; box-shadow: 0 6px 12px rgba(225,29,72,0.12); }
+    .row-extra { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+    .list-favorite-btn { border: none; background: #fff5f5; color: #E11D48; min-width: 28px; height: 28px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; padding: 0 8px; }
     .list-favorite-btn:not(.favorited) { background: #f8fafc; color: #94A3B8; }
     html.dark-mode .list-favorite-btn:not(.favorited) { background: #1E293B; color: #CBD5E1; }
-    .rating-stars { color: #E2E8F0; font-size: 15px; display: inline-flex; align-items: center; gap: 1px; }
+    .rating-stars { color: #E2E8F0; font-size: 14px; display: inline-flex; align-items: center; gap: 1px; }
     .star { cursor: pointer; }
     .star.active { color: #F59E0B; }
-    .rating-count { font-size: 11px; color: var(--text-sub); font-weight: 700; min-width: 34px; text-align: center; }
-    .action-btns { display: flex; gap: 4px; justify-content: center; flex-wrap: nowrap; }
-    .btn { border: none; padding: 6px 10px; border-radius: 10px; font-size: 0.70rem; font-family: var(--font); font-weight: 800; color: white; cursor: pointer; min-width: 52px; min-height: 34px; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; transition: transform 0.2s ease, opacity 0.2s ease; white-space: nowrap; }
+    .rating-count { font-size: 11px; color: var(--text-sub); font-weight: 600; }
+    .action-btns { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+    .btn { border: none; padding: 6px 4px; border-radius: 6px; font-size: 0.65rem; font-family: var(--font); font-weight: 500; color: white; cursor: pointer; min-width: 56px; min-height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: transform 0.2s ease, opacity 0.2s ease; }
     .btn:hover { transform: translateY(-1px); }
     .btn-download { background-color: #2ecc71; }
     .btn-open { background-color: #3498db; }
@@ -416,49 +392,8 @@
     .btn-delete { background-color: #e74c3c; }
     .btn.downloaded { background-color: #94a3b8; cursor: default; }
     .btn.downloaded:hover { transform: none; }
-    .btn-icon { font-size: 0.9rem; line-height: 1; }
-    .btn-text { line-height: 1.1; white-space: nowrap; }
-    .login-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
-    .login-btn.secondary { background: linear-gradient(135deg, #ef4444, #dc2626); box-shadow: 0 4px 12px rgba(239,68,68,0.18); }
-    .login-btn.secondary:hover { background: linear-gradient(135deg, #dc2626, #b91c1c); }
-    .file-table { table-layout: auto; }
-    .file-table thead th:last-child { display: none; }
-    .file-table thead th:first-child { width: 100% !important; }
-    .file-table tbody tr.compact-row td { padding: 8px 10px; border-bottom: 1px solid #edf2f7; text-align: right; }
-    html.dark-mode .file-table tbody tr.compact-row td { border-bottom-color: #1E293B; }
-    .file-entry-card { display: flex; flex-direction: column; gap: 6px; width: 100%; }
-    .file-entry-card-compact { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.98)); border: 1px solid rgba(99,102,241,0.12); border-radius: 14px; padding: 8px 10px; box-shadow: 0 6px 16px rgba(15,23,42,0.05); }
-    html.dark-mode .file-entry-card-compact { background: linear-gradient(180deg, rgba(30,41,59,0.98), rgba(15,23,42,0.98)); border-color: rgba(129,140,248,0.16); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
-    .file-entry-main { display: flex; align-items: flex-start; gap: 8px; min-width: 0; width: 100%; }
-    .file-entry-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
-    .file-name-box { display: flex; align-items: flex-start; width: 100%; max-width: 100%; padding: 8px 10px; border-radius: 10px; background: linear-gradient(135deg, #eef2ff, #f8fafc); border: 1px solid rgba(99,102,241,0.18); box-shadow: 0 5px 12px rgba(99,102,241,0.06); overflow: hidden; }
-    html.dark-mode .file-name-box { background: linear-gradient(135deg, rgba(79,70,229,0.18), rgba(15,23,42,0.92)); border-color: rgba(129,140,248,0.22); }
-    .main-name { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; max-width: 100%; line-height: 1.55; font-size: clamp(0.72rem, 1.18vw, 0.9rem); font-weight: 800; white-space: normal; word-break: break-word; overflow-wrap: anywhere; }
-    .file-meta-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; flex-wrap: nowrap; overflow-x: auto; }
-    .file-meta-box { display: flex; flex-wrap: nowrap; gap: 6px; align-items: center; flex: 1 1 220px; }
-    .file-meta-chip { display: inline-flex; align-items: center; gap: 5px; padding: 5px 9px; border-radius: 999px; background: #f8fafc; color: #475569; font-size: 0.67rem; font-weight: 800; border: 1px solid #e2e8f0; white-space: nowrap; }
-    html.dark-mode .file-meta-chip { background: rgba(30,41,59,0.92); color: #cbd5e1; border-color: rgba(148,163,184,0.18); }
-    .action-btns.inline-under-data, .search-result-actions { display: flex; flex-wrap: nowrap; gap: 4px; width: 100%; justify-content: flex-start; margin-top: 2px; overflow-x: auto; padding-bottom: 2px; }
-    .action-btns.inline-under-data .btn, .search-result-actions .btn { width: auto; min-width: fit-content; min-height: 34px; padding: 6px 10px; border-radius: 10px; font-size: 0.70rem; box-shadow: 0 6px 12px rgba(15,23,42,0.07); flex: 0 0 auto; }
-    .search-result-actions { display: flex; gap: 4px; flex-wrap: nowrap; }
-    .search-result-item { padding-top: 20px !important; }
-    @media (max-width: 768px) {
-      .file-entry-main { gap: 8px; }
-      .file-name-box { max-width: 100%; }
-      .file-meta-row { align-items: flex-start; }
-      .row-extra-inline { justify-content: flex-start; }
-      .action-btns.inline-under-data, .search-result-actions { gap: 4px; }
-      .action-btns.inline-under-data .btn, .search-result-actions .btn { min-height: 34px; }
-    }
-    @media (max-width: 520px) {
-      .file-entry-card-compact { padding: 8px; }
-      .file-icon { width: 34px; height: 34px; flex-basis: 34px; }
-      .main-name { font-size: 0.86rem; }
-      .file-meta-chip { font-size: 0.64rem; padding: 4px 8px; }
-      .list-favorite-btn { min-width: 28px; height: 28px; font-size: 13px; }
-      .rating-stars { font-size: 13px; }
-      .action-btns.inline-under-data, .search-result-actions { gap: 3px; }
-    }
+    .btn-icon { font-size: 0.88rem; line-height: 1; }
+    .btn-text { line-height: 1.2; white-space: normal; }
     @media (max-width: 768px) {
       .file-table, .file-table thead, .file-table tbody, .file-table tr, .file-table th, .file-table td { display: block; width: 100%; }
       .file-table thead { display: none; }
@@ -467,7 +402,7 @@
       .file-table td { border: none; padding: 6px 12px; }
       .file-table td:last-child { padding-top: 0; }
       .action-btns { justify-content: flex-start; }
-      .btn { min-width: 52px; }
+      .btn { min-width: 64px; }
     }
     /* Viewer Modal */
     .viewer-modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 1000; display: none; flex-direction: column; }
@@ -595,71 +530,6 @@
     .admin-cancel-btn:hover { background: var(--card-hover); color: var(--text); }
     .admin-form-note { font-size: 12px; color: var(--text-muted); margin-top: 10px; line-height: 1.7; }
 
-    .message-btn { background: linear-gradient(135deg, #0ea5e9, #2563eb); color: #fff; border: none; border-radius: 14px; padding: 10px 16px; font-family: var(--font); font-weight: 800; cursor: pointer; box-shadow: 0 12px 28px rgba(37,99,235,0.24); display: inline-flex; align-items: center; gap: 8px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .message-btn:hover { transform: translateY(-1px); box-shadow: 0 16px 36px rgba(37,99,235,0.32); }
-    .messaging-panel { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.66); z-index: 3300; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
-    .messaging-panel.active { display: flex; }
-    .messaging-card { width: min(1180px, 100%); max-height: 92vh; background: var(--surface); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
-    .messaging-header { background: linear-gradient(135deg, #1d4ed8, #2563eb); color: #fff; padding: 20px 22px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .messaging-header h2 { margin: 0; font-size: 20px; font-weight: 900; }
-    .messaging-subtitle { margin-top: 4px; font-size: 13px; opacity: 0.92; font-weight: 700; }
-    .messaging-close { background: rgba(255,255,255,0.2); border: none; color: #fff; width: 38px; height: 38px; border-radius: 50%; font-size: 18px; cursor: pointer; }
-    .messaging-body { display: grid; grid-template-columns: minmax(250px, 320px) 1fr; min-height: 62vh; max-height: calc(92vh - 78px); }
-    .messaging-conversations { border-inline-start: 1px solid var(--border); background: linear-gradient(180deg, rgba(37,99,235,0.05), rgba(37,99,235,0.01)); overflow: auto; padding: 12px; }
-    .messaging-conversation-item { width: 100%; border: 1px solid var(--border); background: var(--surface); border-radius: 16px; padding: 14px; margin-bottom: 10px; text-align: right; cursor: pointer; transition: all 0.2s ease; }
-    .messaging-conversation-item:hover, .messaging-conversation-item.active { border-color: rgba(37,99,235,0.45); box-shadow: 0 10px 24px rgba(37,99,235,0.14); transform: translateY(-1px); }
-    .messaging-conversation-name { font-size: 15px; font-weight: 900; color: var(--text); }
-    .messaging-conversation-meta { font-size: 12px; color: var(--text-muted); margin-top: 6px; line-height: 1.7; }
-    .messaging-chat-area { display: flex; flex-direction: column; min-width: 0; }
-    .messaging-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 16px 0; flex-wrap: wrap; }
-    .messaging-toolbar-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .messaging-tool-btn { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 12px; padding: 9px 14px; font-family: var(--font); font-size: 13px; font-weight: 800; cursor: pointer; transition: .2s ease; }
-    .messaging-tool-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-card); }
-    .messaging-tool-btn.active { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border-color: transparent; }
-    .messaging-tool-btn.delete { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; border-color: transparent; }
-    .messaging-tool-btn:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
-    .messaging-selection-count { font-size: 12px; color: var(--text-muted); font-weight: 800; }
-    .message-bubble-wrap { display: flex; align-items: flex-start; gap: 8px; }
-    .message-bubble-wrap.mine { flex-direction: row-reverse; }
-    .message-select-box { display: inline-flex; align-items: center; justify-content: center; width: 22px; min-width: 22px; margin-top: 18px; }
-    .message-select-input { width: 18px; height: 18px; accent-color: #2563eb; cursor: pointer; }
-    .message-bubble.is-selected { outline: 3px solid rgba(37,99,235,.22); }
-    .messaging-thread.selection-mode .message-bubble { cursor: pointer; }
-    @media (max-width: 768px) {
-      .messaging-toolbar { padding: 12px 14px 0; }
-      .messaging-toolbar-group, .messaging-toolbar { width: 100%; }
-      .messaging-tool-btn { flex: 1 1 auto; text-align: center; }
-      .messaging-selection-count { width: 100%; }
-    }
-    .messaging-thread { flex: 1; overflow: auto; padding: 18px; background: linear-gradient(180deg, rgba(99,102,241,0.05), rgba(248,250,252,0.2)); display: flex; flex-direction: column; gap: 12px; }
-    .messaging-empty { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 220px; padding: 24px; color: var(--text-muted); font-weight: 800; }
-    .message-bubble { max-width: min(78%, 520px); padding: 12px 14px; border-radius: 18px; box-shadow: var(--shadow-card); line-height: 1.8; word-break: break-word; }
-    .message-bubble.mine { align-self: flex-start; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border-bottom-left-radius: 6px; }
-    .message-bubble.theirs { align-self: flex-end; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-bottom-right-radius: 6px; }
-    .message-meta { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; opacity: 0.86; margin-bottom: 6px; }
-    .message-text { font-size: 14px; white-space: pre-wrap; }
-    .messaging-compose { border-top: 1px solid var(--border); padding: 14px 16px; background: var(--surface); }
-    .messaging-permission-hint { background: rgba(245,158,11,0.12); color: #92400e; border: 1px solid rgba(245,158,11,0.24); border-radius: 14px; padding: 10px 12px; margin-bottom: 10px; font-size: 13px; font-weight: 800; }
-    .messaging-input { width: 100%; min-height: 110px; max-height: 180px; border: 2px solid var(--border); border-radius: 18px; padding: 14px; resize: vertical; font-family: var(--font); font-size: 14px; background: var(--surface); color: var(--text); outline: none; }
-    .messaging-input:focus { border-color: #2563eb; box-shadow: 0 0 0 4px rgba(37,99,235,0.10); }
-    .messaging-compose-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; }
-    .messaging-status { min-height: 20px; font-size: 12px; font-weight: 800; color: var(--text-muted); }
-    .messaging-send { background: linear-gradient(135deg, #10b981, #059669); color: #fff; border: none; border-radius: 14px; padding: 11px 18px; font-family: var(--font); font-weight: 900; cursor: pointer; }
-    .messaging-send:disabled { opacity: 0.5; cursor: not-allowed; }
-    .messaging-empty-list { padding: 18px; text-align: center; color: var(--text-muted); font-weight: 800; }
-    @media (max-width: 920px) {
-      .messaging-body { grid-template-columns: 1fr; }
-      .messaging-conversations { border-inline-start: none; border-bottom: 1px solid var(--border); max-height: 220px; }
-    }
-    @media (max-width: 640px) {
-      .messaging-panel { padding: 10px; }
-      .messaging-card { max-height: 96vh; border-radius: 18px; }
-      .messaging-header { padding: 16px; }
-      .messaging-thread { padding: 14px; }
-      .message-bubble { max-width: 90%; }
-      .messaging-compose-actions { flex-direction: column; align-items: stretch; }
-      .messaging-send { width: 100%; }
-    }
     /* ===== STRICT VISUAL LOCKDOWN FOR NON-GENERAL USERS ===== */
     body.restricted-user-mode #adminPanelBtn,
     body.restricted-user-mode #adminPanel,
@@ -726,10 +596,7 @@
         <label>كلمة المرور</label>
         <input type="password" id="passwordInput" placeholder="أدخل كلمة المرور">
       </div>
-      <div class="login-actions">
       <button class="login-btn" id="loginBtn">دخول</button>
-      <button class="login-btn secondary" id="fullExitBtn" type="button">خروج نهائي</button>
-      </div>
       <div id="loginError" class="login-error">بيانات الدخول غير صحيحة!</div>
     </div>
   </div>
@@ -743,14 +610,13 @@
           <div class="header-logo">
             <div class="logo-icon">⚖️</div>
             <div class="logo-text">
-              <div class="title-row"><h1 id="appTitle">بيانات محكمة القفر الابتدائية</h1><span class="current-year-badge" id="currentYearBadge">١٤٤٧هـ</span></div>
+              <h1 id="appTitle">بيانات محكمة القفر الابتدائية</h1>
               <p id="headerSubtitle">مدونة الأحكام القضائية للقضايا المستعجلة للعام 1447هـ - واجهة محسّنة لعرض الأحكام والملفات القضائية بوضوح</p>
             </div>
           </div>
           <div class="header-controls">
             <div id="connectionStatus" class="connection-status"><span>🌐</span> متصل</div>
             <span id="currentUserInfo" class="current-user-info"></span>
-            <button class="message-btn" id="messagingBtn" style="display:none;" title="المراسلات">💬 المراسلات</button>
             <button class="sync-btn" id="permissionSyncBtn" style="display:none;" title="تحديث صلاحيات المستخدم من الخادم المركزي فقط">🔐 تحديث الصلاحيات</button>
             <button class="sync-btn" id="fullSyncBtn" style="display:none;" title="مزامنة كاملة للصلاحيات والملفات من الخادم المركزي">🔄 مزامنة كاملة</button>
                         <button class="admin-btn" id="sourceCodeEditorBtn" style="display:none;" title="تحرير صفحة HTML كاملة">🧩 محرر صفحة HTML</button>
@@ -773,18 +639,11 @@
             </button>
             <div class="dropdown-panel" id="panel">
               <div class="menu-clock" id="digitalClock">--:--:--</div>
-              <div class="menu-header">المدونات القضائية</div>
-              <a href="#" class="menu-item year-menu-item active" id="yearMenu_1447" data-year="1447"><span class="icon-dot"></span>مدونة الأحكام للعام القضائي ١٤٤٧هـ</a>
-              <a href="#" class="menu-item year-menu-item" id="yearMenu_1448" data-year="1448"><span class="icon-dot"></span>مدونة الأحكام للعام القضائي ١٤٤٨هـ</a>
-              <div class="year-status-note" id="yearStatusNote">المدونة النشطة حالياً: ١٤٤٧هـ</div>
-              <div class="divider"></div>
               <div class="menu-header">مركز التحكم</div>
               <a href="#" class="menu-item" id="menuPermissionSync" data-target="permissionSyncBtn"><span class="icon-dot"></span>تحديث الصلاحيات</a>
               <a href="#" class="menu-item" id="menuFullSync" data-target="fullSyncBtn"><span class="icon-dot"></span>مزامنة كاملة</a>
-              <a href="#" class="menu-item" id="menuPageSettings" data-target="tabSettingsBtn"><span class="icon-dot"></span>تحديث الصفحة والروابط</a>
                             <a href="#" class="menu-item" id="menuSourceEditor" data-target="sourceCodeEditorBtn"><span class="icon-dot"></span>محرر صفحة HTML</a>
               <a href="#" class="menu-item" id="menuUsers" data-target="adminPanelBtn"><span class="icon-dot"></span>المستخدمون</a>
-              <a href="#" class="menu-item" id="menuMessages" data-target="messagingBtn"><span class="icon-dot"></span>المراسلات</a>
               <a href="#" class="menu-item" id="menuThemeToggle" data-target="themeToggle"><span class="icon-dot"></span><span id="menuThemeLabel">الوضع الليلي</span></a>
               <div class="divider"></div>
               <a href="#" class="menu-item logout-item" id="menuLogout" data-target="logoutBtn">🚪 تسجيل الخروج</a>
@@ -798,7 +657,7 @@
       <div class="tab-admin-cluster">
         <button class="tab-btn active" id="tabButton_tab1" onclick="switchTab('tab1')"><span class="tab-icon">⚡</span><span class="tab-label-text" id="tabLabelText_tab1">الأحكام المستعجلة</span><span class="tab-count-badge" id="tabCount_tab1">0</span></button>
         <button class="tab-upload-trigger" id="uploadBtn_tab1" style="display:none;" onclick="triggerTabFilePicker('tab1')" title="إضافة ملف إلى هذا التبويب"><span>➕</span><span>إضافة ملف</span></button>
-        <button class="tab-settings-trigger" id="tabSettingsBtn" style="display:none;" title="تحديث الصفحة والروابط المركزية والسحابية">✏️</button>
+        <button class="tab-settings-trigger" id="tabSettingsBtn" style="display:none;" title="تعديل أسماء التبويبات وتحديث الصفحة">✏️</button>
       </div>
       <div class="tab-upload-cluster">
         <button class="tab-btn" id="tabButton_tab2" onclick="switchTab('tab2')"><span class="tab-icon">📜</span><span class="tab-label-text" id="tabLabelText_tab2">القضايا المدنية</span><span class="tab-count-badge" id="tabCount_tab2">0</span></button>
@@ -875,13 +734,6 @@
             <button class="filter-btn" data-filter="favorites" onclick="setFilter('favorites', 'tab1')">⭐ المفضلة</button>
             <button class="filter-btn" data-filter="rated" onclick="setFilter('rated', 'tab1')">📊 المقيمة</button>
           </div>
-          <div class="sort-toolbar">
-            <div class="sort-toolbar-label">↕️ ترتيب الملفات</div>
-            <select class="sort-select" id="sortSelect_tab1" onchange="setSort(this.value, 'tab1')" aria-label="ترتيب الملفات">
-              <option value="newest" selected>الأحدث أولاً</option>
-              <option value="oldest">الأقدم أولاً</option>
-            </select>
-          </div>
         </div>
         <h3 class="judgments-title" id="judgmentsTitle_tab1">📋 قائمة الأحكام المستعجلة</h3>
         <div class="judgments-grid">
@@ -921,13 +773,6 @@
             <button class="filter-btn active" data-filter="all" onclick="setFilter('all', 'tab2')">جميع الأحكام</button>
             <button class="filter-btn" data-filter="favorites" onclick="setFilter('favorites', 'tab2')">⭐ المفضلة</button>
             <button class="filter-btn" data-filter="rated" onclick="setFilter('rated', 'tab2')">📊 المقيمة</button>
-          </div>
-          <div class="sort-toolbar">
-            <div class="sort-toolbar-label">↕️ ترتيب الملفات</div>
-            <select class="sort-select" id="sortSelect_tab2" onchange="setSort(this.value, 'tab2')" aria-label="ترتيب الملفات">
-              <option value="newest" selected>الأحدث أولاً</option>
-              <option value="oldest">الأقدم أولاً</option>
-            </select>
           </div>
         </div>
         <h3 class="judgments-title" id="judgmentsTitle_tab2">📋 قائمة القضايا المدنية</h3>
@@ -969,13 +814,6 @@
             <button class="filter-btn" data-filter="favorites" onclick="setFilter('favorites', 'tab3')">⭐ المفضلة</button>
             <button class="filter-btn" data-filter="rated" onclick="setFilter('rated', 'tab3')">📊 المقيمة</button>
           </div>
-          <div class="sort-toolbar">
-            <div class="sort-toolbar-label">↕️ ترتيب الملفات</div>
-            <select class="sort-select" id="sortSelect_tab3" onchange="setSort(this.value, 'tab3')" aria-label="ترتيب الملفات">
-              <option value="newest" selected>الأحدث أولاً</option>
-              <option value="oldest">الأقدم أولاً</option>
-            </select>
-          </div>
         </div>
         <h3 class="judgments-title" id="judgmentsTitle_tab3">📋 قائمة الأحكام الشخصية</h3>
         <div class="judgments-grid">
@@ -1015,13 +853,6 @@
             <button class="filter-btn active" data-filter="all" onclick="setFilter('all', 'tab4')">جميع الأحكام</button>
             <button class="filter-btn" data-filter="favorites" onclick="setFilter('favorites', 'tab4')">⭐ المفضلة</button>
             <button class="filter-btn" data-filter="rated" onclick="setFilter('rated', 'tab4')">📊 المقيمة</button>
-          </div>
-          <div class="sort-toolbar">
-            <div class="sort-toolbar-label">↕️ ترتيب الملفات</div>
-            <select class="sort-select" id="sortSelect_tab4" onchange="setSort(this.value, 'tab4')" aria-label="ترتيب الملفات">
-              <option value="newest" selected>الأحدث أولاً</option>
-              <option value="oldest">الأقدم أولاً</option>
-            </select>
           </div>
         </div>
         <h3 class="judgments-title" id="judgmentsTitle_tab4">⚖️ قائمة الأحكام الجزائية</h3>
@@ -1063,13 +894,6 @@
             <button class="filter-btn" data-filter="favorites" onclick="setFilter('favorites', 'tab5')">⭐ المفضلة</button>
             <button class="filter-btn" data-filter="rated" onclick="setFilter('rated', 'tab5')">📊 المقيمة</button>
           </div>
-          <div class="sort-toolbar">
-            <div class="sort-toolbar-label">↕️ ترتيب الملفات</div>
-            <select class="sort-select" id="sortSelect_tab5" onchange="setSort(this.value, 'tab5')" aria-label="ترتيب الملفات">
-              <option value="newest" selected>الأحدث أولاً</option>
-              <option value="oldest">الأقدم أولاً</option>
-            </select>
-          </div>
         </div>
         <h3 class="judgments-title" id="judgmentsTitle_tab5">🧾 قائمة أحكام الوراثة</h3>
         <div class="judgments-grid">
@@ -1109,13 +933,6 @@
             <button class="filter-btn active" data-filter="all" onclick="setFilter('all', 'tab6')">جميع النماذج</button>
             <button class="filter-btn" data-filter="favorites" onclick="setFilter('favorites', 'tab6')">⭐ المفضلة</button>
             <button class="filter-btn" data-filter="rated" onclick="setFilter('rated', 'tab6')">📊 المقيمة</button>
-          </div>
-          <div class="sort-toolbar">
-            <div class="sort-toolbar-label">↕️ ترتيب الملفات</div>
-            <select class="sort-select" id="sortSelect_tab6" onchange="setSort(this.value, 'tab6')" aria-label="ترتيب الملفات">
-              <option value="newest" selected>الأحدث أولاً</option>
-              <option value="oldest">الأقدم أولاً</option>
-            </select>
           </div>
         </div>
         <h3 class="judgments-title" id="judgmentsTitle_tab6">🏛️ قائمة نماذج المحكمة</h3>
@@ -1157,13 +974,6 @@
             <button class="filter-btn" data-filter="favorites" onclick="setFilter('favorites', 'tab7')">⭐ المفضلة</button>
             <button class="filter-btn" data-filter="rated" onclick="setFilter('rated', 'tab7')">📊 المقيمة</button>
           </div>
-          <div class="sort-toolbar">
-            <div class="sort-toolbar-label">↕️ ترتيب الملفات</div>
-            <select class="sort-select" id="sortSelect_tab7" onchange="setSort(this.value, 'tab7')" aria-label="ترتيب الملفات">
-              <option value="newest" selected>الأحدث أولاً</option>
-              <option value="oldest">الأقدم أولاً</option>
-            </select>
-          </div>
         </div>
         <h3 class="judgments-title" id="judgmentsTitle_tab7">📚 قائمة الملخصات</h3>
         <div class="judgments-grid">
@@ -1182,128 +992,6 @@
         <div class="empty-state" id="emptyState7" style="display: none;"><div class="empty-state-icon">📭</div><div class="empty-state-title">جاري تحميل الفهرس من السحابة...</div></div>
       </div>
     </main>
-  </div>
-
-
-  <div id="tabSettingsPanel" onclick="if(event.target.id==='tabSettingsPanel'){closeTabSettingsPanel();}">
-    <div class="tab-settings-card" onclick="event.stopPropagation();">
-      <div class="tab-settings-header">
-        <h2>✏️ تحديث الصفحة والروابط</h2>
-        <button class="tab-settings-close" id="tabSettingsCloseBtn">✕</button>
-      </div>
-      <div class="tab-settings-body">
-        <div class="tab-settings-note">يمكنك من هنا تعديل عنوان التطبيق وأسماء التبويبات ووصفها، وكذلك تحديث الروابط المركزية والسحابية لكل عام قضائي من نفس الصفحة بدون المساس ببقية خصائص التطبيق. الروابط المركزية تُكتب رابطاً واحداً في كل سطر، والروابط السحابية تُكتب بصيغة tab1=الرابط حتى tab7=الرابط. يمكن ترك مربعات العام ١٤٤٨هـ فارغة حتى يتم تجهيز روابطه لاحقاً.</div>
-        <div class="tab-settings-grid">
-          <div class="tab-settings-row">
-            <div class="tab-settings-badge">🏷️</div>
-            <div class="tab-settings-fields">
-              <label>عنوان التطبيق</label>
-              <input type="text" id="appTitleInput" placeholder="عنوان التطبيق">
-            </div>
-          </div>
-          <div class="tab-settings-row">
-            <div class="tab-settings-badge">⚡</div>
-            <div class="tab-settings-fields">
-              <label>اسم تبويب الأحكام المستعجلة</label>
-              <input type="text" id="tabLabelInput_tab1" placeholder="اسم التبويب">
-              <label>الوصف الظاهر أعلى الصفحة</label>
-              <input type="text" id="tabSubtitleInput_tab1" placeholder="وصف التبويب">
-            </div>
-          </div>
-          <div class="tab-settings-row">
-            <div class="tab-settings-badge">📜</div>
-            <div class="tab-settings-fields">
-              <label>اسم تبويب القضايا المدنية</label>
-              <input type="text" id="tabLabelInput_tab2" placeholder="اسم التبويب">
-              <label>الوصف الظاهر أعلى الصفحة</label>
-              <input type="text" id="tabSubtitleInput_tab2" placeholder="وصف التبويب">
-            </div>
-          </div>
-          <div class="tab-settings-row">
-            <div class="tab-settings-badge">👤</div>
-            <div class="tab-settings-fields">
-              <label>اسم تبويب الأحكام الشخصية</label>
-              <input type="text" id="tabLabelInput_tab3" placeholder="اسم التبويب">
-              <label>الوصف الظاهر أعلى الصفحة</label>
-              <input type="text" id="tabSubtitleInput_tab3" placeholder="وصف التبويب">
-            </div>
-          </div>
-          <div class="tab-settings-row">
-            <div class="tab-settings-badge">⚖️</div>
-            <div class="tab-settings-fields">
-              <label>اسم تبويب الأحكام الجزائية</label>
-              <input type="text" id="tabLabelInput_tab4" placeholder="اسم التبويب">
-              <label>الوصف الظاهر أعلى الصفحة</label>
-              <input type="text" id="tabSubtitleInput_tab4" placeholder="وصف التبويب">
-            </div>
-          </div>
-          <div class="tab-settings-row">
-            <div class="tab-settings-badge">🧾</div>
-            <div class="tab-settings-fields">
-              <label>اسم تبويب أحكام الوراثة</label>
-              <input type="text" id="tabLabelInput_tab5" placeholder="اسم التبويب">
-              <label>الوصف الظاهر أعلى الصفحة</label>
-              <input type="text" id="tabSubtitleInput_tab5" placeholder="وصف التبويب">
-            </div>
-          </div>
-          <div class="tab-settings-row">
-            <div class="tab-settings-badge">🏛️</div>
-            <div class="tab-settings-fields">
-              <label>اسم تبويب نماذج المحكمة</label>
-              <input type="text" id="tabLabelInput_tab6" placeholder="اسم التبويب">
-              <label>الوصف الظاهر أعلى الصفحة</label>
-              <input type="text" id="tabSubtitleInput_tab6" placeholder="وصف التبويب">
-            </div>
-          </div>
-          <div class="tab-settings-row">
-            <div class="tab-settings-badge">📚</div>
-            <div class="tab-settings-fields">
-              <label>اسم تبويب الملخصات</label>
-              <input type="text" id="tabLabelInput_tab7" placeholder="اسم التبويب">
-              <label>الوصف الظاهر أعلى الصفحة</label>
-              <input type="text" id="tabSubtitleInput_tab7" placeholder="وصف التبويب">
-            </div>
-          </div>
-        </div>
-
-        <div class="admin-section-title" style="margin-top:18px;">🔗 إدارة الروابط المركزية والسحابية</div>
-        <div class="link-settings-grid">
-          <div class="link-settings-card">
-            <div class="link-settings-title">الروابط المركزية — ١٤٤٧هـ</div>
-            <div class="link-settings-subtitle">اكتب رابطاً مركزياً واحداً في كل سطر. عند ترك هذا المربع فارغاً سيستخدم التطبيق الرابط الاحتياطي المدمج.</div>
-            <textarea id="centralLinks_1447" class="link-settings-textarea" placeholder="رابط واحد في كل سطر"></textarea>
-          </div>
-          <div class="link-settings-card">
-            <div class="link-settings-title">الروابط السحابية — ١٤٤٧هـ</div>
-            <div class="link-settings-subtitle">اكتب الروابط بصيغة tab1=الرابط وحتى tab7=الرابط حسب كل تبويب.</div>
-            <textarea id="cloudLinks_1447" class="link-settings-textarea" placeholder="tab1=https://...&#10;tab2=https://...&#10;tab3=https://...&#10;tab4=https://...&#10;tab5=https://...&#10;tab6=https://...&#10;tab7=https://..."></textarea>
-            <div class="link-settings-help">tab1 = الأحكام المستعجلة
- tab2 = القضايا المدنية
- tab3 = الأحكام الشخصية
- tab4 = الأحكام الجزائية
- tab5 = أحكام الوراثة
- tab6 = نماذج المحكمة
- tab7 = الملخصات</div>
-          </div>
-          <div class="link-settings-card">
-            <div class="link-settings-title">الروابط المركزية — ١٤٤٨هـ</div>
-            <div class="link-settings-subtitle">تم ترك هذا المربع فارغاً افتراضياً حتى يمكن تعبئته لاحقاً عند الحاجة.</div>
-            <textarea id="centralLinks_1448" class="link-settings-textarea" placeholder="اتركه فارغاً أو أضف رابطاً واحداً في كل سطر"></textarea>
-          </div>
-          <div class="link-settings-card">
-            <div class="link-settings-title">الروابط السحابية — ١٤٤٨هـ</div>
-            <div class="link-settings-subtitle">تم ترك هذا المربع فارغاً افتراضياً، ويمكن تعبئته لاحقاً بنفس الصيغة tab1=الرابط.</div>
-            <textarea id="cloudLinks_1448" class="link-settings-textarea" placeholder="tab1=https://...&#10;tab2=https://...&#10;tab3=https://...&#10;tab4=https://...&#10;tab5=https://...&#10;tab6=https://...&#10;tab7=https://..."></textarea>
-            <div class="link-settings-help">يمكن ترك جميع الأسطر فارغة في الوقت الحالي.</div>
-          </div>
-        </div>
-
-        <div class="tab-settings-actions">
-          <button class="admin-save-btn" id="saveTabSettingsBtn">💾 حفظ التحديثات</button>
-          <button class="admin-cancel-btn" id="cancelTabSettingsBtn">إلغاء</button>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Viewer Modal -->
@@ -1346,42 +1034,6 @@
     <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
   </div>
 
-  <div id="messagingPanel" class="messaging-panel" onclick="if(event.target.id==='messagingPanel'){closeMessagingPanel();}">
-    <div class="messaging-card" onclick="event.stopPropagation();">
-      <div class="messaging-header">
-        <div>
-          <h2 id="messagingTitle">💬 المراسلات</h2>
-          <div class="messaging-subtitle" id="messagingSubtitle">تواصل مباشر بين المدير والمستخدمين داخل التطبيق.</div>
-        </div>
-        <button class="messaging-close" id="messagingCloseBtn">✕</button>
-      </div>
-      <div class="messaging-body">
-        <div class="messaging-conversations" id="messagingUsersList"></div>
-        <div class="messaging-chat-area">
-          <div class="messaging-toolbar" id="messagingToolbar">
-            <div class="messaging-toolbar-group">
-              <button class="messaging-tool-btn" id="toggleMessageSelectionBtn">🗂️ تحديد</button>
-              <button class="messaging-tool-btn" id="selectAllMessagesBtn" style="display:none;">☑️ تحديد الكل</button>
-              <button class="messaging-tool-btn" id="clearSelectedMessagesBtn" style="display:none;">↺ إلغاء التحديد</button>
-              <button class="messaging-tool-btn delete" id="deleteSelectedMessagesBtn" style="display:none;">🗑️ حذف المحدد</button>
-            </div>
-            <div class="messaging-selection-count" id="messagingSelectionCount">لا يوجد تحديد</div>
-          </div>
-          <div class="messaging-empty" id="messagingEmptyState">اختر محادثة لعرض الرسائل وبدء المراسلة.</div>
-          <div class="messaging-thread" id="messagingThread" style="display:none;"></div>
-          <div class="messaging-compose">
-            <div class="messaging-permission-hint" id="messagingPermissionHint" style="display:none;">المدير لم يفعّل لك صلاحية إرسال الرسائل بعد. يمكنك استقبال الرسائل فقط حالياً.</div>
-            <textarea id="messageInput" class="messaging-input" placeholder="اكتب رسالتك هنا"></textarea>
-            <div class="messaging-compose-actions">
-              <div class="messaging-status" id="messagingStatus"></div>
-              <button class="messaging-send" id="sendMessageBtn">إرسال</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- ===== ADMIN PANEL ===== -->
   <div id="adminPanel" onclick="if(event.target.id==='adminPanel'){closeAdminPanel();}">
     <div class="admin-panel-card" onclick="event.stopPropagation();">
@@ -1420,14 +1072,6 @@
               <label class="perm-item">
                 <input type="checkbox" id="perm-download" checked>
                 <span>📥 تنزيل</span>
-              </label>
-              <label class="perm-item">
-                <input type="checkbox" id="perm-message">
-                <span>💬 السماح بمراسلة المدير</span>
-              </label>
-              <label class="perm-item">
-                <input type="checkbox" id="perm-advanced-sort">
-                <span>↕️ السماح بالفرز الكامل</span>
               </label>
             </div>
             <div style="margin-top:10px;font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:6px;">📋 صلاحيات الأقسام</div>
@@ -1506,14 +1150,6 @@
               <label class="perm-item">
                 <input type="checkbox" id="edit-perm-download">
                 <span>📥 تنزيل</span>
-              </label>
-              <label class="perm-item">
-                <input type="checkbox" id="edit-perm-message">
-                <span>💬 السماح بمراسلة المدير</span>
-              </label>
-              <label class="perm-item">
-                <input type="checkbox" id="edit-perm-advanced-sort">
-                <span>↕️ السماح بالفرز الكامل</span>
               </label>
             </div>
             <div style="margin-top:10px;font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:6px;">📋 صلاحيات الأقسام</div>
