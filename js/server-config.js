@@ -1,6 +1,6 @@
 window.SERVER_CONFIG = {
   centralSyncUrls: [
-    'https://jsonblob.com/api/jsonBlob/019e55e5-d540-7073-85e5-b50bab64ed62'
+    'https://jsonblob.com/api/jsonBlob/019e5ba7-7767-73b7-8484-617b3031174d'
   ],
   localFallbackPath: 'data/central-sync-default.json',
   cacheStorageKey: 'cloudAppCentralSnapshotCache.v1',
